@@ -19,6 +19,10 @@ collections:
             label: Site Title
             required: true
           - widget: string
+            name: language
+            label: Site Language
+            required: true
+          - widget: string
             name: siteUrl
             label: Website URL
             required: true
