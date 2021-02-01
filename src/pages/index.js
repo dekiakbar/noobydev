@@ -18,7 +18,7 @@ const IndexPage = ({
 
   return (
     <Layout>
-      <Helmet>
+      <Helmet htmlAttributes={{ lang : site.siteMetadata.language }}>
         <title>{site.siteMetadata.title}</title>
         <meta name="description" content={site.siteMetadata.description} />
       </Helmet>
@@ -38,6 +38,7 @@ export const pageQuery = graphql`
       siteMetadata {
         title
         description
+        language
       }
     }
     allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
