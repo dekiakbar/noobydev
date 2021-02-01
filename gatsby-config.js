@@ -9,6 +9,14 @@ module.exports = {
   siteMetadata: require("./site-meta-data.json"),
   plugins: [
     {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://nooby.dev',
+        sitemap: 'https://nooby.dev/sitemap.xml',
+        policy: [{ userAgent: '*', allow: '/' }]
+      }
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `markdown-pages`,

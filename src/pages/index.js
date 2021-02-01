@@ -19,8 +19,14 @@ const IndexPage = ({
   return (
     <Layout>
       <Helmet htmlAttributes={{ lang : site.siteMetadata.language }}>
+        <meta name="robots" content="index,follow" />
+        <meta name="googlebot" content="index,follow" />
+        <meta name="googlebot-news" content="index,follow" />
+        <meta name="googlebot" content="index,follow" />
+        <meta name="googlebot-news" content="snippet" />
         <title>{site.siteMetadata.title}</title>
         <meta name="description" content={site.siteMetadata.description} />
+        <link rel="canonical" href={site.siteMetadata.siteUrl} />
       </Helmet>
       <HeroHeader/>
       <h2>Blog Posts &darr;</h2>
@@ -39,6 +45,7 @@ export const pageQuery = graphql`
         title
         description
         language
+        siteUrl
       }
     }
     allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
