@@ -2,12 +2,12 @@
   "title": "Noobydev",
   "language": "en",
   "siteUrl": "https://nooby.dev",
-  "description": "Noobydev, Blog yang membahas seputar pemrograman dan website",
-  "keyword":"key1, key2",
-  "image": "/images/snape.jpg",
+  "description": "Noobydev merupakan blog yang membahas seputar pemrograman dan website dan beberapa tutorial pemrograman",
+  "keyword":"komputer,coding,kode,pemrograman,kode",
+  "image": "",
   "twitterUsername": "@",
   "home": {
-    "title": "Hi! I'm Delog",
-    "description": "I have been specifically designed to become a digital home for designers and developers, help them build amazing professional looking websites with ease. You don't have to worry about nitty gritty of web hosting services to run a blog and yet take full advantage of CMS to manage content :)"
+    "title": "Hello Ganss!!!",
+    "description": "Noobydev merupakan blog yang membahas seputar pemrograman dan website dan beberapa tutorial pemrograman"
   }
 }

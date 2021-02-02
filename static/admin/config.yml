@@ -33,10 +33,10 @@ collections:
           - widget: image
             name: image
             label: Open Graph Image
-            required: true
+            required: false
             media_library:
-            config:
-              multiple: false
+              config:
+                multiple: false
           - widget: text
             name: description
             label: Description
