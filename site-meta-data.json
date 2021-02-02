@@ -1,8 +1,11 @@
 {
   "title": "Noobydev",
-  "language": "En",
+  "language": "en",
   "siteUrl": "https://nooby.dev",
-  "description": "Noobydev, a GatsbyJS and Netlify CMS starter for Designers and Developers",
+  "description": "Noobydev, Blog yang membahas seputar pemrograman dan website",
+  "keyword":"key1, key2",
+  "image": "/images/snape.jpg",
+  "twitterUsername": "@",
   "home": {
     "title": "Hi! I'm Delog",
     "description": "I have been specifically designed to become a digital home for designers and developers, help them build amazing professional looking websites with ease. You don't have to worry about nitty gritty of web hosting services to run a blog and yet take full advantage of CMS to manage content :)"

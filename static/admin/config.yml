@@ -26,6 +26,17 @@ collections:
             name: siteUrl
             label: Website URL
             required: true
+          - widget: string
+            name: keyword
+            label: Meta Keyword
+            required: true
+          - widget: image
+            name: image
+            label: Open Graph Image
+            required: true
+            media_library:
+            config:
+              multiple: false
           - widget: text
             name: description
             label: Description
@@ -66,6 +77,10 @@ collections:
       - { name: title, label: Title }
       - label: Meta Description
         name: metaDescription
+        widget: text
+        required: false
+      - label: Meta Keyword
+        name: metaKeyword
         widget: text
         required: false
       - label: Featured Image

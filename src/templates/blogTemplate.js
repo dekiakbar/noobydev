@@ -1,20 +1,16 @@
 import React from "react"
-import Helmet from 'react-helmet';
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
+import SEO from "../components/seo"
 
 export default function Template({
-  data, // this prop will be injected by the GraphQL query below.
+  data,
 }) {
-  const { site, markdownRemark } = data // data.markdownRemark holds your post data
-  const { siteMetadata } = site
+  const { markdownRemark } = data
   const { frontmatter, html } = markdownRemark
   return (
     <Layout>
-      <Helmet>
-        <title>{frontmatter.title} | {siteMetadata.title}</title>
-        <meta name="description" content={frontmatter.metaDescription} />
-      </Helmet>
+      <SEO title={frontmatter.title} description={frontmatter.metaDescription} image={frontmatter.thumbnail} article={true} keyword={frontmatter.metaKeyword}/>
       <div className="blog-post-container">
         <article className="post">
           
@@ -54,6 +50,8 @@ export const pageQuery = graphql`
         path
         title
         thumbnail
+        metaKeyword
+        metaDescription
       }
     }
   }

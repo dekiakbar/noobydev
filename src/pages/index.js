@@ -1,9 +1,9 @@
 import React from "react"
-import Helmet from 'react-helmet';
 import { graphql } from 'gatsby'
 import Layout from "../components/layout"
 import PostLink from "../components/post-link"
 import HeroHeader from "../components/heroHeader"
+import SEO from "../components/seo"
 
 const IndexPage = ({
   data: {
@@ -18,16 +18,7 @@ const IndexPage = ({
 
   return (
     <Layout>
-      <Helmet htmlAttributes={{ lang : site.siteMetadata.language }}>
-        <meta name="robots" content="index,follow" />
-        <meta name="googlebot" content="index,follow" />
-        <meta name="googlebot-news" content="index,follow" />
-        <meta name="googlebot" content="index,follow" />
-        <meta name="googlebot-news" content="snippet" />
-        <title>{site.siteMetadata.title}</title>
-        <meta name="description" content={site.siteMetadata.description} />
-        <link rel="canonical" href={site.siteMetadata.siteUrl} />
-      </Helmet>
+      <SEO article={false}/>
       <HeroHeader/>
       <h2>Blog Posts &darr;</h2>
       <div className="grids">
