@@ -18,7 +18,7 @@ const IndexPage = ({
 
   return (
     <Layout>
-      <SEO article={false}/>
+      <SEO article={true}/>
       <HeroHeader/>
       <h2>Blog Posts &darr;</h2>
       <div className="grids">
