@@ -59,6 +59,9 @@ module.exports = {
         theme_color: `#381696`,
         display: `standalone`,
         icon: "src/images/icon.png",
+        icon_options: {
+          purpose: `maskable`,
+        }
       },
     },
     `gatsby-plugin-sass`, 
