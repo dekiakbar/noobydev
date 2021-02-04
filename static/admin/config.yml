@@ -30,6 +30,10 @@ collections:
             name: keyword
             label: Meta Keyword
             required: true
+          - widget: string
+            name: twitterUsername
+            label: Twitter Username
+            required: true
           - widget: image
             name: image
             label: Open Graph Image
