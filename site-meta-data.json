@@ -2,10 +2,9 @@
   "title": "Noobydev",
   "language": "en",
   "siteUrl": "https://nooby.dev",
+  "keyword": "komputer,coding,kode,pemrograman,kode",
+  "image": "/assets/noobydev.png",
   "description": "Noobydev merupakan blog yang membahas seputar pemrograman dan website dan beberapa tutorial pemrograman",
-  "keyword":"komputer,coding,kode,pemrograman,kode",
-  "image": "",
-  "twitterUsername": "@",
   "home": {
     "title": "Hello Ganss!!!",
     "description": "Noobydev merupakan blog yang membahas seputar pemrograman dan website dan beberapa tutorial pemrograman"
