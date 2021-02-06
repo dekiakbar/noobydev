@@ -87,6 +87,10 @@ collections:
         name: metaKeyword
         widget: text
         required: false
+      - label: Tags
+        name: tags
+        widget: text
+        required: false
       - label: Featured Image
         name: thumbnail
         widget: image

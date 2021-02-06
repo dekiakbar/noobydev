@@ -171,7 +171,6 @@ a {
     margin-bottom: 32px;
     text-align: center;
   }
-  
 }
 .post-thumbnail {
   text-align: center;
@@ -245,6 +244,15 @@ a {
   .post-link {
     color: var(--text-color);
     text-decoration: none;
+  }
+  .post-tags{
+    margin-right: 5px;
+    padding: 5px;
+    background-color: var(--primary-color);
+    border-radius: 5px;
+    color: var(--primary-text-color);
+    font-size: 12px;
+    font-weight: bold;
   }
 }
 .post-meta {

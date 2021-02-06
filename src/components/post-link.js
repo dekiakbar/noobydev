@@ -14,7 +14,18 @@ const PostLink = ({ post }) => (
           {post.frontmatter.title}
         </Link>
       </h2>
-      <div className="post-meta">{post.frontmatter.date}</div>
+      {!!post.frontmatter.tags && (
+        post.frontmatter.tags.map((tag,i) => {
+          return(
+            <label className="post-tags" key={i} >
+              {tag}
+            </label>
+          )
+        })
+      )}
+      <div className="post-meta">
+        {post.frontmatter.date}
+      </div>
     </header>
   </article>
 )
