@@ -15,10 +15,10 @@ const PostLink = ({ post }) => (
         </Link>
       </h2>
       {!!post.frontmatter.tags && (
-        post.frontmatter.tags.map((tag,i) => {
+        post.frontmatter.tags.split(',').map((tag,i) => {
           return(
             <label className="post-tags" key={i} >
-              {tag}
+              {tag.charAt(0).toUpperCase() + tag.slice(1)}
             </label>
           )
         })
