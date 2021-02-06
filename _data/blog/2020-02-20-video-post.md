@@ -3,8 +3,8 @@ template: BlogPost
 path: /video-post
 date: 2020-02-20T15:05:49.332Z
 title: Post with Youtube Video embed
-thumbnail: /assets/image-1.jpg
-tags: ["Coding", "Programmer"]
+tags: 'coding,programmer'
+thumbnail: /assets/image-6.jpg
 ---
 I have embedded a youtude video in this page. By adding HTML to the markdown
 
