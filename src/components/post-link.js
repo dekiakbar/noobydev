@@ -14,6 +14,13 @@ const PostLink = ({ post }) => (
           {post.frontmatter.title}
         </Link>
       </h2>
+      {!!post.frontmatter.metaDescription && (
+        <div className="post-excerpt">
+          <p>
+            {post.frontmatter.metaDescription}
+          </p>
+        </div>
+      )}
       {!!post.frontmatter.tags && (
         post.frontmatter.tags.split(',').map((tag,i) => {
           return(

@@ -27,6 +27,7 @@ body.light {
   --contact-bg: #f7f8fe;
   --contact-bdr: #d3d6e7;
   --input-bg: var(--background);
+  --input-line : #000000;
 }
 body.dark {
   --primary-color: #9984d5;
@@ -49,6 +50,7 @@ body.dark {
   --contact-bg: var(--card-shadow);
   --contact-bdr: var(--card-bg);
   --input-bg: var(--card-bg);
+  --input-line : #ffffff;
 }
 /* System Fonts as used by Medium and WordPress */
 body {
@@ -245,6 +247,9 @@ a {
     color: var(--text-color);
     text-decoration: none;
   }
+  .post-excerpt {
+    font-size: 14px;
+  }
   .post-tags{
     margin-right: 5px;
     padding: 5px;
@@ -413,4 +418,64 @@ body.light {
     box-shadow: 0 0 0 2px;
     top: 8px;
     left: 2px
+}
+
+.search-bar{
+  h2{
+    display: inline-block;
+  }
+  input{
+    display: inline-block;
+    margin: 5px 10px;
+    padding: 5px;
+    border-radius: 5px;
+    background-color:var(--contact-bg);
+    color: var(--btn-text-color);
+    outline: none !important;
+    border:2px solid var(--input-line);
+    width: 55px;
+    transition: width 1s;
+    
+    &:active{
+      border-color: var(--primary-color);
+      color: var(--primary-color);
+      background-color: var(--contact-bg);
+      outline: none !important;
+      border:2px solid var(--primary-color);
+      width: 200px;
+    }
+    &:focus{
+      border-color: var(--primary-color);
+      color: var(--primary-color);
+      background-color: var(--contact-bg);
+      outline: none !important;
+      border:2px solid var(--primary-color);
+      width: 200px;
+    }
+    &:hover{
+      width: 200px;
+    }
+  }
+  .search-icon{
+    display: inline-block;
+    color: var(--primary-color);
+  }
+}
+
+@media screen and (max-width:424px){
+  .search-bar{
+    input{
+      width: 100%;
+      margin:0px;
+      &:active{
+         width: 100%;
+      }
+      &:focus{
+         width: 100%;
+      }
+      &:hover{
+         width: 100%;
+      }
+    }
+  }
 }

@@ -1,4 +1,4 @@
-import React from "react"
+import React,{ useState } from "react"
 import { graphql } from 'gatsby'
 import Layout from "../components/layout"
 import PostLink from "../components/post-link"
@@ -7,12 +7,43 @@ import SEO from "../components/seo"
 
 const IndexPage = ({
   data: {
-    site,
     allMarkdownRemark: { edges },
   },
 }) => {
+  const allPosts = edges
+  const emptyQuery = ""
 
-  const Posts = edges
+  const [state, setState] = useState({
+    filteredData: [],
+    query: emptyQuery,
+  })
+
+  const handleInputChange = event => {
+    console.log(event.target.value)
+    const query = event.target.value
+    const posts = edges || []
+    const filteredData = posts.filter(post => {
+      const {title, tags } = post.node.frontmatter
+      return (
+        title.toLowerCase().includes(query.toLowerCase()) ||
+        (tags &&
+          tags
+            .toLowerCase()
+            .includes(query.toLowerCase()))
+      )
+    })
+    setState({
+      query,
+      filteredData,
+    })
+  }
+
+  const { filteredData, query } = state
+  const hasSearchResults = filteredData && query !== emptyQuery
+  const posts = hasSearchResults ? filteredData : allPosts
+  
+  console.log(edges);
+  const Posts = posts
     .filter(edge => !!edge.node.frontmatter.date)
     .map(edge => <PostLink key={edge.node.id} post={edge.node} />)
 
@@ -20,7 +51,15 @@ const IndexPage = ({
     <Layout>
       <SEO article={true}/>
       <HeroHeader/>
-      <h2>Blog Posts &darr;</h2>
+      <div className="search-bar">
+        <h2>Blog Posts &darr;</h2>
+        <input
+          type="search"
+          aria-label="Search"
+          placeholder="Cari..."
+          onChange={handleInputChange}
+        />
+      </div>
       <div className="grids">
         {Posts}
       </div>
@@ -50,6 +89,7 @@ export const pageQuery = graphql`
             title
             thumbnail
             tags
+            metaDescription
           }
         }
       }
