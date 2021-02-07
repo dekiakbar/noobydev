@@ -28,6 +28,8 @@ body.light {
   --contact-bdr: #d3d6e7;
   --input-bg: var(--background);
   --input-line : #000000;
+  --contact-text-color : var(--primary-color);
+  --btn-bg-color:var(--primary-color);
 }
 body.dark {
   --primary-color: #9984d5;
@@ -51,6 +53,8 @@ body.dark {
   --contact-bdr: var(--card-bg);
   --input-bg: var(--card-bg);
   --input-line : #ffffff;
+  --contact-text-color : #BEB1E7;
+  --btn-bg-color : #66578d;
 }
 /* System Fonts as used by Medium and WordPress */
 body {
@@ -93,6 +97,10 @@ a {
       margin-right: 0;
     }
   }
+  .contact-link{
+    color: var(--primary-color);
+    font-weight: 900;
+  }
 }
 .site-header {
   display: flex;
@@ -130,8 +138,8 @@ a {
   margin: 0 20px 0 0;
   transition: background-color .3s linear;
   &.-primary {
-    background-color: var(--primary-color);
-    border-color: var(--primary-color);
+    background-color: var(--btn-bg-color);
+    border-color: var(--btn-bg-color);
     color: var(--primary-text-color);
     &:hover {
       background-color: var(--secondary-color);
@@ -253,7 +261,7 @@ a {
   .post-tags{
     margin-right: 5px;
     padding: 5px;
-    background-color: var(--primary-color);
+    background-color: var(--btn-bg-color);
     border-radius: 5px;
     color: var(--primary-text-color);
     font-size: 12px;
@@ -268,7 +276,7 @@ a {
 .site-footer {
   text-align: center;
   margin: 90px 0 16px;
-  color: #666;
+  color: #fff;
   a {
     font-weight: 700;
   }
@@ -429,8 +437,8 @@ body.light {
     margin: 5px 10px;
     padding: 5px;
     border-radius: 5px;
-    background-color:var(--contact-bg);
-    color: var(--btn-text-color);
+    background-color:var(--background);
+    color:var(--input-line);
     outline: none !important;
     border:2px solid var(--input-line);
     width: 55px;
