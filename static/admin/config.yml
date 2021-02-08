@@ -4,13 +4,13 @@ backend:
   repo: dekiakbar/noobydev
 
 media_folder: static/images/blog
-public_folder: /images/uploads/blog
+public_folder: /images/blog
 
 collections:
   - name: settings
     label: Settings
     media_folder: static/images/admin
-    public_folder: /images/uploads/admin
+    public_folder: /images/admin
     files:
       - name: config
         label: Config
