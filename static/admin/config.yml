@@ -3,12 +3,14 @@ backend:
   # change repo to your git repository url
   repo: dekiakbar/noobydev
 
-media_folder: static/assets
-public_folder: /assets
+media_folder: static/images/blog
+public_folder: /images/uploads/blog
 
 collections:
   - name: settings
     label: Settings
+    media_folder: static/images/admin
+    public_folder: /images/uploads/admin
     files:
       - name: config
         label: Config
