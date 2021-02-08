@@ -75,7 +75,7 @@ collections:
       - name: path
         label: Path
         widget: string
-        pattern: [/]
+        pattern: [/blog/]
         hint: "Path must start with /"
       - { name: date, label: Date, widget: datetime }
       - { name: title, label: Title }
