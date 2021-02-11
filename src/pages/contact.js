@@ -17,7 +17,8 @@ const ContactPage = ({
           <p>Let me help you kick start your next project &rarr;</p>
         </div>
         <div>
-          <form id="contact-form" className="form-container" name="contact" method="POST" data-netlify="true">
+          <form className="form-container" name="Contact Form" method="POST" data-netlify="true">
+            <input type="hidden" name="form-name" value="Contact Form" />
             <div>
               <label htmlFor="name">Name</label>
               <input type="text" name="name" id="name" required="required"/>
@@ -35,7 +36,7 @@ const ContactPage = ({
               <textarea name="message" id="message" required="required"></textarea>
             </div>
             <div style={{display: "flex", justifyContent: "flex-end"}}>
-              <input type="submit" className="button -primary" style={{marginRight: 0}}/>
+              <button className="button -primary" style={{marginRight: 0}} type="submit">Send</button>
             </div>
           </form>
         </div>
