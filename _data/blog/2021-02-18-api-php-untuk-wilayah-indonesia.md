@@ -2,7 +2,7 @@
 template: BlogPost
 path: /blog/api-php-untuk-wilayah-indonesia
 date: 2021-02-18T15:39:41.652Z
-title: API php untuk wilayah Indonesia
+title: API PHP untuk wilayah Indonesia
 metaDescription: >-
   API PHP untuk mengambil data Provinsi, Kota/Kabupaten, Kecamatan, Kelurahan
   dari website BPS, tersedia dalam bentuk SQL. CSV dan JSON. jika anda
@@ -10,7 +10,7 @@ metaDescription: >-
   install juga paket composernya.
 metaKeyword: >-
   api,php,indonesia,region,bps,sdk,wilayah,composer,package,paket,provinsi,kota,kabupaten,kecamatan,kelurahan,kodepos,
-tags: 'API,PHP,Composer,Wilayah Indonesia,BPS,Laravel'
+tags: 'API,PHP,Composer,BPS,Laravel,Wilayah Indonesia'
 thumbnail: /images/blog/api-php-untuk-wilayah-indonesia.png
 ---
 Pada artikel ini saya akan membahas sebuah paket composer yang bisa anda gunakan untuk scraping data atau bisa dibilang untuk mendapatkan data wilayah indonesia yang mana sumber data nya berasal dari website [BPS](https://bps.go.id/) .
