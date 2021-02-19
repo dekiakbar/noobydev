@@ -17,7 +17,7 @@ const ContactPage = ({
           <p>Let me help you kick start your next project &rarr;</p>
         </div>
         <div>
-          <form className="form-container" name="Contact Form" method="POST" data-netlify="true">
+          <form className="form-container" name="Contact Form" method="POST" data-netlify-recaptcha="true" data-netlify="true">
             <input type="hidden" name="form-name" value="Contact Form" />
             <div>
               <label htmlFor="name">Name</label>
@@ -35,6 +35,7 @@ const ContactPage = ({
               <label htmlFor="message">Message</label>
               <textarea name="message" id="message" required="required"></textarea>
             </div>
+            <div data-netlify-recaptcha="true"></div>
             <div style={{display: "flex", justifyContent: "flex-end"}}>
               <button className="button -primary" style={{marginRight: 0}} type="submit">Send</button>
             </div>
