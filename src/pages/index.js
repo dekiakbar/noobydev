@@ -42,7 +42,6 @@ const IndexPage = ({
   const hasSearchResults = filteredData && query !== emptyQuery
   const posts = hasSearchResults ? filteredData : allPosts
   
-  console.log(edges);
   const Posts = posts
     .filter(edge => !!edge.node.frontmatter.date)
     .map(edge => <PostLink key={edge.node.id} post={edge.node} />)
