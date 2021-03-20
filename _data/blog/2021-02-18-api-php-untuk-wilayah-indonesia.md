@@ -34,16 +34,14 @@ untuk menginstall paket ini ada beberapa cara, diantaranya :
   composer require dekiakbar/indonesia-regions-php-client
   ```
 
-````
   Jika anda menggunakan laravel maka paket ini akan otomatis di load oleh laravel, namun jika anda tidak menggunakan laravel maka anda dapat import paket tersebut secara manual pada file php anda, sebagai contoh :
 
   ```php
-  require_once __DIR__ . '/vendor/autoload.php';
-  use Dekiakbar\IndonesiaRegionsPhpClient\Region;
-  $region = new Region();
-  print_r( $region->getAllProvince('pos') );
-````
-
+   require_once __DIR__ . '/vendor/autoload.php';
+   use Dekiakbar\IndonesiaRegionsPhpClient\Region;
+   $region = new Region();
+   print_r( $region->getAllProvince('pos') );
+  ```
 * dengan cara manual yaitu dengan mendownload paket tersebut dari repo github saya [disini](https://github.com/dekiakbar/indonesia-regions-php-client).
 
   Setelah di download anda bisa import manual class **Region** dari paket tersebut cara nya sama dengan cara jika anda install menggunakan composer, yaitu dengan cara berikut :
