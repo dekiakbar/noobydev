@@ -495,4 +495,11 @@ code.language-php{
   .token.deleted {
     color: #fca6d2;
   }
+
+  .token.comment,
+  .token.prolog,
+  .token.doctype,
+  .token.cdata {
+    color: #c0d0d0;
+  }
 }
