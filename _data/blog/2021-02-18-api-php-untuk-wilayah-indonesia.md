@@ -15,9 +15,9 @@ thumbnail: /images/blog/api-php-untuk-wilayah-indonesia.png
 ---
 Pada artikel ini saya akan membahas sebuah paket composer yang bisa anda gunakan untuk scraping data atau bisa dibilang untuk mendapatkan data wilayah indonesia yang mana sumber data nya berasal dari website [BPS](https://bps.go.id/) .
 
-URL github : <https://github.com/dekiakbar/indonesia-regions-php-client>
+URL github : <a href="https://github.com/dekiakbar/indonesia-regions-php-client" target="_blank">Klik Disini</a>
 
-URL Packagist :  <https://packagist.org/packages/dekiakbar/indonesia-regions-php-client>
+URL Packagist :  <a href="https://packagist.org/packages/dekiakbar/indonesia-regions-php-client" target="_blank">Klik Disini</a>
 
 [](https://github.com/dekiakbar/indonesia-regions-php-client)Paket ini support dan bisa digunakan dengan Laravel atau framework lain yang support dengan composer. Dengan paket ini anda bisa mendapatkan data Provinsi, Kota/Kabupaten, Kecamatan, Kelurahan dan kode pos. ada 2 jenis data yang tersedia dalam paket [Indonesia Regions PHP Client](https://github.com/dekiakbar/indonesia-regions-php-client) , yaitu :
 
