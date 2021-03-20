@@ -486,3 +486,13 @@ body.light {
     }
   }
 }
+
+code.language-php{
+  .token.property,
+  .token.tag,
+  .token.constant,
+  .token.symbol,
+  .token.deleted {
+    color: #fca6d2;
+  }
+}
