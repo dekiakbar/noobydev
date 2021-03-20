@@ -15,25 +15,26 @@ thumbnail: /images/blog/api-php-untuk-wilayah-indonesia.png
 ---
 Pada artikel ini saya akan membahas sebuah paket composer yang bisa anda gunakan untuk scraping data atau bisa dibilang untuk mendapatkan data wilayah indonesia yang mana sumber data nya berasal dari website [BPS](https://bps.go.id/) .
 
-URL github : <a href="https://github.com/dekiakbar/indonesia-regions-php-client" target="_blank">Klik Disini</a>
+URL github : <a rel="noreferrer" href="https://github.com/dekiakbar/indonesia-regions-php-client" target="_blank">Klik Disini</a>
 
-URL Packagist :  <a href="https://packagist.org/packages/dekiakbar/indonesia-regions-php-client" target="_blank">Klik Disini</a>
+URL Packagist :  <a rel="noreferrer" href="https://packagist.org/packages/dekiakbar/indonesia-regions-php-client" target="_blank">Klik Disini</a>
 
 [](https://github.com/dekiakbar/indonesia-regions-php-client)Paket ini support dan bisa digunakan dengan Laravel atau framework lain yang support dengan composer. Dengan paket ini anda bisa mendapatkan data Provinsi, Kota/Kabupaten, Kecamatan, Kelurahan dan kode pos. ada 2 jenis data yang tersedia dalam paket [Indonesia Regions PHP Client](https://github.com/dekiakbar/indonesia-regions-php-client) , yaitu :
 
 * Data Offline, dalam format : SQL, JSON, dan CSV.
 * Data Online / Realtime dengan scraping data langsung ke website [BPS](https://bps.go.id/) .
 
-#### Installasi Paket
+## Installasi Paket
 
 untuk menginstall paket ini ada beberapa cara, diantaranya :
 
 * menggunakan composer dengan menjalankan perintah berikut :
 
   ```php
-composer require dekiakbar/indonesia-regions-php-client
-```
+  composer require dekiakbar/indonesia-regions-php-client
+  ```
 
+````
   Jika anda menggunakan laravel maka paket ini akan otomatis di load oleh laravel, namun jika anda tidak menggunakan laravel maka anda dapat import paket tersebut secara manual pada file php anda, sebagai contoh :
 
   ```php
@@ -41,7 +42,8 @@ composer require dekiakbar/indonesia-regions-php-client
   use Dekiakbar\IndonesiaRegionsPhpClient\Region;
   $region = new Region();
   print_r( $region->getAllProvince('pos') );
-  ```
+````
+
 * dengan cara manual yaitu dengan mendownload paket tersebut dari repo github saya [disini](https://github.com/dekiakbar/indonesia-regions-php-client).
 
   Setelah di download anda bisa import manual class **Region** dari paket tersebut cara nya sama dengan cara jika anda install menggunakan composer, yaitu dengan cara berikut :
