@@ -19,7 +19,7 @@ URL github : <a rel="noreferrer" href="https://github.com/dekiakbar/indonesia-re
 
 URL Packagist :  <a rel="noreferrer" href="https://packagist.org/packages/dekiakbar/indonesia-regions-php-client" target="_blank">Klik Disini</a>
 
-[](https://github.com/dekiakbar/indonesia-regions-php-client)Paket ini support dan bisa digunakan dengan Laravel atau framework lain yang support dengan composer. Dengan paket ini anda bisa mendapatkan data Provinsi, Kota/Kabupaten, Kecamatan, Kelurahan dan kode pos. ada 2 jenis data yang tersedia dalam paket [Indonesia Regions PHP Client](https://github.com/dekiakbar/indonesia-regions-php-client) , yaitu :
+[indonesia-regions-php-client](https://github.com/dekiakbar/indonesia-regions-php-client)Paket ini support dan bisa digunakan dengan Laravel atau framework lain yang support dengan composer. Dengan paket ini anda bisa mendapatkan data Provinsi, Kota/Kabupaten, Kecamatan, Kelurahan dan kode pos. ada 2 jenis data yang tersedia dalam paket [Indonesia Regions PHP Client](https://github.com/dekiakbar/indonesia-regions-php-client) , yaitu :
 
 * Data Offline, dalam format : SQL, JSON, dan CSV.
 * Data Online / Realtime dengan scraping data langsung ke website [BPS](https://bps.go.id/) .
