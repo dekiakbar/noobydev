@@ -53,7 +53,8 @@ untuk menginstall paket ini ada beberapa cara, diantaranya :
   print_r( $region->getAllProvince('pos') );
   ```
 
-  ## Penggunaan
+## Penggunaan
+
 * Daftar kode ISO 3166-2 untuk setiap provinsi :
 
   **Note : Method ini hanya untuk provinsi saja.**
