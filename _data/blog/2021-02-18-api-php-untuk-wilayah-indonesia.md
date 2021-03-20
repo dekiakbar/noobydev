@@ -30,7 +30,9 @@ untuk menginstall paket ini ada beberapa cara, diantaranya :
 
 * menggunakan composer dengan menjalankan perintah berikut :
 
-  `composer require dekiakbar/indonesia-regions-php-client`
+  ```php
+composer require dekiakbar/indonesia-regions-php-client
+```
 
   Jika anda menggunakan laravel maka paket ini akan otomatis di load oleh laravel, namun jika anda tidak menggunakan laravel maka anda dapat import paket tersebut secara manual pada file php anda, sebagai contoh :
 
@@ -52,294 +54,293 @@ untuk menginstall paket ini ada beberapa cara, diantaranya :
   ```
 
   ## Penggunaan
+* Daftar kode ISO 3166-2 untuk setiap provinsi :
 
-  1. Daftar kode ISO 3166-2 untuk setiap provinsi :
+  **Note : Method ini hanya untuk provinsi saja.**
 
-     **Note : Method ini hanya untuk provinsi saja.**
+  ```php
+  require_once __DIR__ . '/vendor/autoload.php';
+  use Dekiakbar\IndonesiaRegionsPhpClient\Region;
+  $region = new Region();
 
-     ```
-     require_once __DIR__ . '/vendor/autoload.php';
-     use Dekiakbar\IndonesiaRegionsPhpClient\Region;
-     $region = new Region();
+  // Kode Provinsi didapat dari $region->getAllProvince('bps')->list
+  $provinceId = 32;
+  print_r( 
+          $region->getIsoCode($provinceId) 
+  );
 
-     // Kode Provinsi didapat dari $region->getAllProvince('bps')->list
-     $provinceId = 32;
-     print_r( 
-             $region->getIsoCode($provinceId) 
-     );
+  // return dari srespon berupa string, yang mana kurang lebih seperti berikut  :
+  ID-JB
+  ```
+* Daftar data provinsi :
 
-     // return dari srespon berupa string, yang mana kurang lebih seperti berikut  :
-     ID-JB
-     ```
-  2. Daftar data provinsi :
+  ```php
+  require_once __DIR__ . '/vendor/autoload.php';
+  use Dekiakbar\IndonesiaRegionsPhpClient\Region;
+  $region = new Region();
+  print_r( $region->getAllProvince('pos') );
 
-     ```
-     require_once __DIR__ . '/vendor/autoload.php';
-     use Dekiakbar\IndonesiaRegionsPhpClient\Region;
-     $region = new Region();
-     print_r( $region->getAllProvince('pos') );
+  // berikut contoh respon :
+  stdClass Object
+  (
+      [detail] => Array
+          (
+              [0] => stdClass Object
+                  (
+                      [kode_bps] => 11
+                      [nama_bps] => ACEH
+                      [kode_pos] => 20000
+                      [nama_pos] => ACEH
+                  )
 
-     // berikut contoh respon :
-     stdClass Object
-     (
-         [detail] => Array
-             (
-                 [0] => stdClass Object
-                     (
-                         [kode_bps] => 11
-                         [nama_bps] => ACEH
-                         [kode_pos] => 20000
-                         [nama_pos] => ACEH
-                     )
+              [1] => stdClass Object
+                  (
+                      [kode_bps] => 51
+                      [nama_bps] => BALI
+                      [kode_pos] => 80000
+                      [nama_pos] => BALI
+                  )
+          )
+      [list] => Array
+          (
+              [0] => stdClass Object
+                  (
+                      [kode] => 11
+                      [nama] => ACEH
+                  )
 
-                 [1] => stdClass Object
-                     (
-                         [kode_bps] => 51
-                         [nama_bps] => BALI
-                         [kode_pos] => 80000
-                         [nama_pos] => BALI
-                     )
-             )
-         [list] => Array
-             (
-                 [0] => stdClass Object
-                     (
-                         [kode] => 11
-                         [nama] => ACEH
-                     )
+              [1] => stdClass Object
+                  (
+                      [kode] => 12
+                      [nama] => SUMATERA UTARA
+                  )
+          )
+  )
+  ```
+* Daftar data kota/kabupaten bedasarkan Id provinsi :
 
-                 [1] => stdClass Object
-                     (
-                         [kode] => 12
-                         [nama] => SUMATERA UTARA
-                     )
-             )
-     )
-     ```
-  3. Daftar data kota/kabupaten bedasarkan Id provinsi :
+  ```php
+  require_once __DIR__ . '/vendor/autoload.php';
+  use Dekiakbar\IndonesiaRegionsPhpClient\Region;
+  $region = new Region();
 
-     ```
-     require_once __DIR__ . '/vendor/autoload.php';
-     use Dekiakbar\IndonesiaRegionsPhpClient\Region;
-     $region = new Region();
+  // provinsi Id di dapatkan dari $region->getAllProvince('bps')
+  $provinceId = 32;
+  print_r( 
+      $region->getCityListByProvinceId('pos',$provinceId) 
+  );
 
-     // provinsi Id di dapatkan dari $region->getAllProvince('bps')
-     $provinceId = 32;
-     print_r( 
-         $region->getCityListByProvinceId('pos',$provinceId) 
-     );
+  // berikut contoh respon :
+  stdClass Object
+  (
+      [detail] => Array
+          (
+              [0] => stdClass Object
+                  (
+                      [kode_bps] => 3204
+                      [nama_bps] => BANDUNG
+                      [kode_pos] => 40300
+                      [nama_pos] => BANDUNG
+                  )
 
-     // berikut contoh respon :
-     stdClass Object
-     (
-         [detail] => Array
-             (
-                 [0] => stdClass Object
-                     (
-                         [kode_bps] => 3204
-                         [nama_bps] => BANDUNG
-                         [kode_pos] => 40300
-                         [nama_pos] => BANDUNG
-                     )
+              [1] => stdClass Object
+                  (
+                      [kode_bps] => 3273
+                      [nama_bps] => BANDUNG
+                      [kode_pos] => 40100
+                      [nama_pos] => KOTA BANDUNG
+                  )
+          )
+      [list] => Array
+          (
+              [0] => stdClass Object
+                  (
+                      [kode] => 3201
+                      [nama] => BOGOR
+                  )
 
-                 [1] => stdClass Object
-                     (
-                         [kode_bps] => 3273
-                         [nama_bps] => BANDUNG
-                         [kode_pos] => 40100
-                         [nama_pos] => KOTA BANDUNG
-                     )
-             )
-         [list] => Array
-             (
-                 [0] => stdClass Object
-                     (
-                         [kode] => 3201
-                         [nama] => BOGOR
-                     )
+              [1] => stdClass Object
+                  (
+                      [kode] => 3202
+                      [nama] => SUKABUMI
+                  )
+          )
+  )
+  ```
+* Daftar Kecamatan berdasarkan Id Kota :
 
-                 [1] => stdClass Object
-                     (
-                         [kode] => 3202
-                         [nama] => SUKABUMI
-                     )
-             )
-     )
-     ```
-  4. Daftar Kecamatan berdasarkan Id Kota :
+  ```php
+  require_once __DIR__ . '/vendor/autoload.php';
+  use Dekiakbar\IndonesiaRegionsPhpClient\Region;
+  $region = new Region();
 
-     ```
-     require_once __DIR__ . '/vendor/autoload.php';
-     use Dekiakbar\IndonesiaRegionsPhpClient\Region;
-     $region = new Region();
+  // POS
+  // Id kota didapatkan dari $region->getCityListByProvinceId('pos',$provinceId)->list
+  $cityId = 3273;
+  print_r( 
+      $region->getSubdistrictListByCityId('pos',$cityId)
+  );
 
-     // POS
-     // Id kota didapatkan dari $region->getCityListByProvinceId('pos',$provinceId)->list
-     $cityId = 3273;
-     print_r( 
-         $region->getSubdistrictListByCityId('pos',$cityId)
-     );
+  // respon yang didapat kurang lebih seperti berikut :
+  stdClass Object
+  (
+      [detail] => Array
+          (
+              [0] => stdClass Object
+                  (
+                      [kode_bps] => 3273180
+                      [nama_bps] => ANDIR
+                      [kode_pos] => 40181
+                      [nama_pos] => Andir
+                  )
 
-     // respon yang didapat kurang lebih seperti berikut :
-     stdClass Object
-     (
-         [detail] => Array
-             (
-                 [0] => stdClass Object
-                     (
-                         [kode_bps] => 3273180
-                         [nama_bps] => ANDIR
-                         [kode_pos] => 40181
-                         [nama_pos] => Andir
-                     )
+              [1] => stdClass Object
+                  (
+                      [kode_bps] => 3273180
+                      [nama_bps] => ANDIR
+                      [kode_pos] => 40182
+                      [nama_pos] => Andir
+                  )
+          )
+      [list] => Array
+          (
+              [0] => stdClass Object
+                  (
+                      [kode] => 3273010
+                      [nama] => BANDUNG KULON
+                  )
 
-                 [1] => stdClass Object
-                     (
-                         [kode_bps] => 3273180
-                         [nama_bps] => ANDIR
-                         [kode_pos] => 40182
-                         [nama_pos] => Andir
-                     )
-             )
-         [list] => Array
-             (
-                 [0] => stdClass Object
-                     (
-                         [kode] => 3273010
-                         [nama] => BANDUNG KULON
-                     )
-
-                 [1] => stdClass Object
-                     (
-                         [kode] => 3273020
-                         [nama] => BABAKAN CIPARAY
-                     )
-             )
-     )
-
+              [1] => stdClass Object
+                  (
+                      [kode] => 3273020
+                      [nama] => BABAKAN CIPARAY
+                  )
+          )
+  )
 
 
-     // Dagri
-     // Id Kota/Kabupaten didapat dari $region->getCityListByProvinceId('dagri',$provinceId)->list
-     $cityId = '32.73';
-     print_r(
-         $region->getSubdistrictListByCityId('dagri',$cityId)
-     );
 
-     // respon yang didapata kurang lebih seperti berikut :
-     stdClass Object
-     (
-         [detail] => Array
-             (
-                 [0] => stdClass Object
-                     (
-                         [kode_bps] => 3273050
-                         [nama_bps] => ASTANAANYAR
-                         [kode_dagri] => 32.73.10
-                         [nama_dagri] => ASTANA ANYAR
-                     )
+  // Dagri
+  // Id Kota/Kabupaten didapat dari $region->getCityListByProvinceId('dagri',$provinceId)->list
+  $cityId = '32.73';
+  print_r(
+      $region->getSubdistrictListByCityId('dagri',$cityId)
+  );
 
-                 [1] => stdClass Object
-                     (
-                         [kode_bps] => 3273120
-                         [nama_bps] => UJUNG BERUNG
-                         [kode_dagri] => 32.73.26
-                         [nama_dagri] => UJUNGBERUNG
-                     )
-             )
-         [list] => Array
-             (
-                 [0] => stdClass Object
-                     (
-                         [kode] => 32.73.01
-                         [nama] => Sukasari
-                     )
+  // respon yang didapata kurang lebih seperti berikut :
+  stdClass Object
+  (
+      [detail] => Array
+          (
+              [0] => stdClass Object
+                  (
+                      [kode_bps] => 3273050
+                      [nama_bps] => ASTANAANYAR
+                      [kode_dagri] => 32.73.10
+                      [nama_dagri] => ASTANA ANYAR
+                  )
 
-                 [1] => stdClass Object
-                     (
-                         [kode] => 32.73.02
-                         [nama] => Coblong
-                     )
-             )
-     )
-     ```
-  5. Daftar Desa/Kelurahan berdasarkan Id kecamatan :
+              [1] => stdClass Object
+                  (
+                      [kode_bps] => 3273120
+                      [nama_bps] => UJUNG BERUNG
+                      [kode_dagri] => 32.73.26
+                      [nama_dagri] => UJUNGBERUNG
+                  )
+          )
+      [list] => Array
+          (
+              [0] => stdClass Object
+                  (
+                      [kode] => 32.73.01
+                      [nama] => Sukasari
+                  )
 
-     ```
-     require_once __DIR__ . '/vendor/autoload.php';
-     use Dekiakbar\IndonesiaRegionsPhpClient\Region;
-     $region = new Region();
-     // POS
-     // Id Kecamatan didapatkan dari $region->getSubdistrictListByCityId('pos',$cityId)->list
-     $subdistrictId = 3273010;
-     print_r( 
-         $region->getVillageListBySubdistrictId('pos',$subdistrictId)
-     );
+              [1] => stdClass Object
+                  (
+                      [kode] => 32.73.02
+                      [nama] => Coblong
+                  )
+          )
+  )
+  ```
+* Daftar Desa/Kelurahan berdasarkan Id kecamatan :
 
-     // respon yang didapat kurang lebih seperti berikut :
-     stdClass Object
-     (
-         [detail] => Array
-             (
-                 [0] => stdClass Object
-                     (
-                         [kode_bps] => 3273010005
-                         [nama_bps] => CARINGIN
-                         [kode_pos] => 40212
-                         [nama_pos] => Caringin
-                     )
+  ```php
+  require_once __DIR__ . '/vendor/autoload.php';
+  use Dekiakbar\IndonesiaRegionsPhpClient\Region;
+  $region = new Region();
+  // POS
+  // Id Kecamatan didapatkan dari $region->getSubdistrictListByCityId('pos',$cityId)->list
+  $subdistrictId = 3273010;
+  print_r( 
+      $region->getVillageListBySubdistrictId('pos',$subdistrictId)
+  );
 
-                 [1] => stdClass Object
-                     (
-                         [kode_bps] => 3273010007
-                         [nama_bps] => CIBUNTU
-                         [kode_pos] => 40212
-                         [nama_pos] => Cibuntu
-                     )
-             )
-         [list] => Array
-             (
-                 [0] => stdClass Object
-                     (
-                         [kode] => 3273010001
-                         [nama] => GEMPOL SARI
-                     )
+  // respon yang didapat kurang lebih seperti berikut :
+  stdClass Object
+  (
+      [detail] => Array
+          (
+              [0] => stdClass Object
+                  (
+                      [kode_bps] => 3273010005
+                      [nama_bps] => CARINGIN
+                      [kode_pos] => 40212
+                      [nama_pos] => Caringin
+                  )
 
-                 [1] => stdClass Object
-                     (
-                         [kode] => 3273010002
-                         [nama] => CIGONDEWAH KALER
-                     )
-             )
-     )
+              [1] => stdClass Object
+                  (
+                      [kode_bps] => 3273010007
+                      [nama_bps] => CIBUNTU
+                      [kode_pos] => 40212
+                      [nama_pos] => Cibuntu
+                  )
+          )
+      [list] => Array
+          (
+              [0] => stdClass Object
+                  (
+                      [kode] => 3273010001
+                      [nama] => GEMPOL SARI
+                  )
 
-     // Dagri
-     // Id Kecamatan di dapat dari $region->getSubdistrictListByCityId('dagri',$cityId)->list
-     $subdistrictId = '32.73.10';
-     print_r( 
-         $region->getVillageListBySubdistrictId('dagri',$subdistrictId) 
-     );
+              [1] => stdClass Object
+                  (
+                      [kode] => 3273010002
+                      [nama] => CIGONDEWAH KALER
+                  )
+          )
+  )
 
-     // respon yang didapat kurang lebih seperti berikut :
-     stdClass Object
-     (
-         [detail] => Array
-             (
-                 [0] => stdClass Object
-                     (
-                         [kode_bps] => 3273050001
-                         [nama_bps] => KARASAK
-                         [kode_dagri] => 32.73.10.1001
-                         [nama_dagri] => KARASAK
-                     )
+  // Dagri
+  // Id Kecamatan di dapat dari $region->getSubdistrictListByCityId('dagri',$cityId)->list
+  $subdistrictId = '32.73.10';
+  print_r( 
+      $region->getVillageListBySubdistrictId('dagri',$subdistrictId) 
+  );
 
-                 [1] => stdClass Object
-                     (
-                         [kode_bps] => 3273050002
-                         [nama_bps] => PELINDUNG HEWAN
-                         [kode_dagri] => 32.73.10.1006
-                         [nama_dagri] => PELINDUNG HEWAN
-                     )
-             )
-     )
-     ```
+  // respon yang didapat kurang lebih seperti berikut :
+  stdClass Object
+  (
+      [detail] => Array
+          (
+              [0] => stdClass Object
+                  (
+                      [kode_bps] => 3273050001
+                      [nama_bps] => KARASAK
+                      [kode_dagri] => 32.73.10.1001
+                      [nama_dagri] => KARASAK
+                  )
+
+              [1] => stdClass Object
+                  (
+                      [kode_bps] => 3273050002
+                      [nama_bps] => PELINDUNG HEWAN
+                      [kode_dagri] => 32.73.10.1006
+                      [nama_dagri] => PELINDUNG HEWAN
+                  )
+          )
+  )
+  ```
