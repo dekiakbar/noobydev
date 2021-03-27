@@ -13,6 +13,6 @@
   [headers.values]
     X-Frame-Options = "DENY"
     X-XSS-Protection = "1; mode=block"
-    Content-Security-Policy = "style-src 'self' 'unsafe-inline';default-src 'self' *.google-analytics.com nooby.dev *.cloudfront.net;"
+    Content-Security-Policy = "default-src 'self' 'unsafe-inline' *.google-analytics.com nooby.dev *.cloudfront.net; script-src 'self' 'unsafe-inline' 'unsafe-hashes'; script-src-elem 'self' 'unsafe-inline' 'unsafe-hashes' *.google-analytics.com nooby.dev *.cloudfront.net; style-src 'self' 'unsafe-inline' 'unsafe-hashes' *.google-analytics.com nooby.dev *.cloudfront.net; style-src-elem 'self' 'unsafe-inline' 'unsafe-hashes' *.google-analytics.com nooby.dev *.cloudfront.net; style-src-attr 'self' 'unsafe-inline' 'unsafe-hashes' *.google-analytics.com nooby.dev *.cloudfront.net; img-src 'self' data: *.google-analytics.com nooby.dev *.cloudfront.net; font-src *; connect-src 'self' *.google-analytics.com nooby.dev *.cloudfront.net; media-src 'self' *.google-analytics.com nooby.dev *.cloudfront.net; object-src 'self' *.google-analytics.com nooby.dev *.cloudfront.net; prefetch-src 'self' *.google-analytics.com nooby.dev *.cloudfront.net; child-src 'self' *.google-analytics.com nooby.dev *.cloudfront.net; frame-src 'self' *.google-analytics.com nooby.dev *.cloudfront.net"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "no-referrer"
