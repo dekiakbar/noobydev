@@ -10,7 +10,7 @@ metaDescription: >-
 metaKeyword: >-
   linode,vps,benchmark vps,shared vps,sg vps, singapore vps,1GB VPS,2GB VPS,8GB
   VPS,16GB VPS,geekbench,hdparm,bench,nench,bechmark
-tags: 'Linode,VPS,1GB,2GB,8GB,16GB,Linode Shared,Ubuntu,Nench,Geekbench,Bench,Hdparm'
+tags: 'Linode,VPS,1GB,2GB,8GB,16GB,Ubuntu,Linode Shared'
 thumbnail: /images/blog/Screenshot from 2021-03-27 15-10-04-min.png
 ---
 Benchmark / review shared VPS linode 1GB, 2GB, 8GB dan 16 GB. Datacenter singapore, dalam test ini menggunakan beberapa tool yaitu bench, geekbench4, hdparm dan nench , menggunakan OS ubuntu 20.04 LTS.
