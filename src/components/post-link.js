@@ -21,15 +21,17 @@ const PostLink = ({ post }) => (
           </p>
         </div>
       )}
-      {!!post.frontmatter.tags && (
-        post.frontmatter.tags.split(',').map((tag,i) => {
-          return(
-            <label className="post-tags" key={i} >
-              {tag.charAt(0).toUpperCase() + tag.slice(1)}
-            </label>
-          )
-        })
-      )}
+      <div className="post-tags-container">
+        {!!post.frontmatter.tags && (
+          post.frontmatter.tags.split(',').map((tag,i) => {
+            return(
+              <label className="post-tags" key={i} >
+                {tag.charAt(0).toUpperCase() + tag.slice(1)}
+              </label>
+            )
+          })
+        )}
+      </div>
       <div className="post-meta">
         {post.frontmatter.date}
       </div>

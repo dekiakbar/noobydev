@@ -260,14 +260,17 @@ a {
   .post-excerpt {
     font-size: 14px;
   }
-  .post-tags{
-    margin-right: 5px;
-    padding: 5px;
-    background-color: var(--btn-bg-color);
-    border-radius: 5px;
-    color: var(--primary-text-color);
-    font-size: 12px;
-    font-weight: bold;
+  .post-tags-container{
+    label{
+      margin: 3px 5px 3px 0px;
+      display: inline-block;
+      padding: 5px;
+      background-color: var(--btn-bg-color);
+      border-radius: 5px;
+      color: var(--primary-text-color);
+      font-size: 12px;
+      font-weight: bold;
+    }
   }
 }
 .post-meta {
@@ -583,5 +586,17 @@ table th {
   
   table td:last-child {
     border-bottom: 0;
+  }
+}
+
+@media screen and (max-width:420px){
+  article.card{
+    display: block;
+
+    a{
+      img{
+        height: auto;
+      }
+    }
   }
 }
